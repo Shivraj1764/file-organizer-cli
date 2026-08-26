@@ -1,0 +1,60 @@
+================================================================================
+🗂️ File Organizer CLI - Execution & Evaluation Log
+👨‍💻 Developed by SHIV PATIL
+================================================================================
+
+[1] Command Executed:
+    python fileorganizer.py data --dry-run
+
+Output:
+    [DRY RUN] archive.zip -> Archives/
+    [DRY RUN] budget.xlsx -> Spreadsheets/
+    [DRY RUN] document.docx -> Documents/
+    [DRY RUN] notes.txt -> Documents/
+    [DRY RUN] photo.jpg -> Images/
+    [DRY RUN] presentation.pptx -> Presentations/
+    [DRY RUN] resume.pdf -> Documents/
+    [DRY RUN] song.mp3 -> Audio/
+    [DRY RUN] unknown.xyz -> Others/
+    [DRY RUN] video.mp4 -> Videos/
+
+    [DRY RUN] Summary:
+    Would move: 10
+    Would skip: 0
+    Exit Code: 0 (EXIT_SUCCESS)
+
+--------------------------------------------------------------------------------
+
+[2] Automated Pytest Test Suite Results:
+    Command: pytest -v
+
+    tests/test_cli.py::TestCLIParsing::test_help_flag_displays_usage_and_examples PASSED
+    tests/test_cli.py::TestCLIParsing::test_missing_directory_argument_fails_cleanly PASSED
+    tests/test_cli.py::TestCLIParsing::test_end_to_end_cli_execution PASSED
+    tests/test_cli.py::TestCLIParsing::test_end_to_end_cli_dry_run_execution PASSED
+    tests/test_errors.py::TestValidationErrors::test_missing_directory_raises_filenotfound PASSED
+    tests/test_errors.py::TestValidationErrors::test_file_instead_of_directory_raises_notadirectory PASSED
+    tests/test_errors.py::TestValidationErrors::test_missing_directory_cli_exit_code_and_message PASSED
+    tests/test_errors.py::TestValidationErrors::test_file_as_directory_cli_exit_code_and_message PASSED
+    tests/test_errors.py::TestFileCollisionAndSafety::test_destination_file_exists_skips_and_does_not_overwrite PASSED
+    tests/test_errors.py::TestFileCollisionAndSafety::test_dry_run_destination_collision_warning PASSED
+    tests/test_errors.py::TestRuntimeFailures::test_file_disappears_during_processing PASSED
+    tests/test_errors.py::TestRuntimeFailures::test_permission_denied_on_individual_file_move PASSED
+    tests/test_errors.py::TestRuntimeFailures::test_permission_denied_on_directory_access PASSED
+    tests/test_errors.py::TestInterruptionAndSignals::test_keyboard_interrupt_returns_130_with_clean_message PASSED
+    tests/test_errors.py::TestInterruptionAndSignals::test_unexpected_exception_returns_1_without_raw_traceback PASSED
+    tests/test_organization.py::TestCategoryMapping::test_image_extensions PASSED
+    tests/test_organization.py::TestCategoryMapping::test_document_extensions PASSED
+    tests/test_organization.py::TestCategoryMapping::test_spreadsheet_extensions PASSED
+    tests/test_organization.py::TestCategoryMapping::test_presentation_extensions PASSED
+    tests/test_organization.py::TestCategoryMapping::test_audio_extensions PASSED
+    tests/test_organization.py::TestCategoryMapping::test_video_extensions PASSED
+    tests/test_organization.py::TestCategoryMapping::test_archive_extensions PASSED
+    tests/test_organization.py::TestCategoryMapping::test_unrecognized_and_no_extension PASSED
+    tests/test_directory.py::TestDirectoryOrganization::test_organize_multiple_categories PASSED
+    tests/test_directory.py::TestDirectoryOrganization::test_subdirectories_are_not_moved PASSED
+    tests/test_directory.py::TestDirectoryOrganization::test_empty_directory_handling PASSED
+    tests/test_directory.py::TestDirectoryOrganization::test_dry_run_mode_makes_no_changes PASSED
+
+============================= 27 passed in 0.35s ==============================
+================================================================================
